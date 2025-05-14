@@ -17,7 +17,7 @@ export default function GlobalTime() {
   useEffect(() => {
     const getAllTimeZones = async () => {
       try {
-        const res = await axios.get(`https://localhost:7054/api/Home`);
+        const res = await axios.get(`https://datetimewebapi.runasp.net/api/Home`);
         setTimeZones(res.data);
       } catch (err) {
         console.log(err);
@@ -34,7 +34,7 @@ export default function GlobalTime() {
     setMessage("")
     const getTimeZoneById = async () => {
       try {
-        const res = await axios.post(`https://localhost:7054/api/Home/time`, { TimeZoneId: timeZoneId });
+        const res = await axios.post(`https://datetimewebapi.runasp.net/api/Home/time`, { TimeZoneId: timeZoneId });
         setSelectedTime(res.data.time);
         setMessage(`${timeZoneId} time successfully received from the date time server`);
       } catch (err) {
